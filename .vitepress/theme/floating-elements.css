@@ -1,0 +1,224 @@
+/* 全局浮动元素样式 */
+.global-background-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* 动态渐变背景效果 */
+.dynamic-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    rgba(66, 184, 131, 0.02) 0%, 
+    rgba(255, 255, 255, 0) 50%, 
+    rgba(66, 184, 131, 0.02) 100%);
+  filter: blur(40px);
+  transform-origin: center;
+  animation: rotateGradient 20s ease infinite;
+  z-index: -2;
+}
+
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* 流光效果 */
+.light-rays {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0) 40%, 
+    rgba(66, 184, 131, 0.05) 100%);
+  z-index: -2;
+  opacity: 0.7;
+  animation: rotateRays 40s linear infinite;
+}
+
+@keyframes rotateRays {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 网格背景 */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(66, 184, 131, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66, 184, 131, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: -3;
+}
+
+/* 星空效果 */
+.starry-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.star {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: twinkle 5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* 浮动气泡效果 */
+.bubble {
+  position: absolute;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 255, 255, 0.8), 
+    rgba(66, 184, 131, 0.1));
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3) inset;
+  backdrop-filter: blur(1px);
+  animation: float-bubble 15s ease-in-out infinite;
+}
+
+@keyframes float-bubble {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  25% { transform: translateY(-100px) translateX(50px) scale(1.05); }
+  50% { transform: translateY(-150px) translateX(0) scale(1); }
+  75% { transform: translateY(-100px) translateX(-50px) scale(0.95); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* 磁场线效果 */
+.magnetic-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(66, 184, 131, 0.01),
+    rgba(66, 184, 131, 0.01) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  filter: blur(1px);
+  opacity: 0.5;
+  animation: moveMagneticField 30s linear infinite;
+  z-index: -4;
+}
+
+@keyframes moveMagneticField {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* 普通浮动元素 */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(66, 184, 131, 0.1);
+  pointer-events: none;
+  animation: float-around 30s linear infinite;
+}
+
+@keyframes float-around {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(50px, 100px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50px, 50px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* 创建一些随机形状的元素 */
+.floating-element:nth-child(3n+1) {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.floating-element:nth-child(3n+2) {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.floating-element:nth-child(3n+3) {
+  clip-path: circle(50% at 50% 50%);
+}
+
+/* 不同元素使用不同的动画路径 */
+.floating-element:nth-child(2n) {
+  animation-name: float-zigzag;
+}
+
+.floating-element:nth-child(3n) {
+  animation-name: float-circular;
+}
+
+@keyframes float-zigzag {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(100px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(0, -100px) scale(1);
+  }
+  75% {
+    transform: translate(-100px, -50px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-circular {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .floating-element, .bubble, .star {
+    opacity: 0.3;
+  }
+  
+  .grid-background, .magnetic-field {
+    opacity: 0.2;
+  }
+}

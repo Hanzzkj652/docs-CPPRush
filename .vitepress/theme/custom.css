@@ -1,0 +1,437 @@
+/**
+ * 全局动画效果
+ */
+
+/* 平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 页面加载动画 */
+body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 全局背景美化 */
+#app {
+  position: relative;
+}
+
+#app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(66, 184, 131, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(66, 184, 131, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(66, 184, 131, 0.01) 0%, transparent 100%);
+  background-size: 120% 120%;
+  animation: gradientMovement 30s ease infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2342b883' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* 页面顶部渐变装饰 */
+.VPNav {
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.VPNav::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(66, 184, 131, 0.8) 0%, 
+    rgba(62, 175, 124, 0.3) 50%, 
+    rgba(66, 184, 131, 0.8) 100%);
+  z-index: 10;
+}
+
+/* 页脚美化 */
+.VPFooter {
+  position: relative;
+}
+
+.VPFooter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(66, 184, 131, 0.3) 50%, 
+    transparent 100%);
+}
+
+/* 页面内容容器美化 */
+.VPContent {
+  position: relative;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  animation: pageTransition 0.5s ease;
+}
+
+/* 侧边栏美化 */
+.VPSidebar {
+  background: rgba(var(--vp-c-bg-rgb), 0.95);
+  backdrop-filter: blur(5px);
+  border-right: 1px solid rgba(var(--vp-c-divider-rgb), 0.3);
+}
+
+/* 文档块容器美化 */
+.vp-doc {
+  position: relative;
+}
+
+.vp-doc > div {
+  position: relative;
+  z-index: 1;
+}
+
+.vp-doc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 200px;
+  background: radial-gradient(circle at top right, rgba(66, 184, 131, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.vp-doc::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 200px;
+  background: radial-gradient(circle at bottom left, rgba(66, 184, 131, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+/* 动画关键帧 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 链接悬停效果 */
+a {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+a:not(.VPButton):not(.VPSocialLink) {
+  background: linear-gradient(to right, var(--vp-c-brand-1), var(--vp-c-brand-1));
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+
+a:not(.VPButton):not(.VPSocialLink):hover {
+  background-size: 100% 2px;
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+a:not(.VPButton):not(.VPSocialLink):active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+/* 侧边栏链接特殊效果 */
+.VPSidebarItem.is-active > .item > .VPLink {
+  background: linear-gradient(90deg, var(--vp-c-brand-soft), transparent);
+  border-radius: 4px;
+  transform: translateX(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPSidebarItem .item:hover > .VPLink {
+  transform: translateX(4px);
+  background: linear-gradient(90deg, var(--vp-c-brand-soft), transparent);
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+/* 移除链接悬停时的箭头图标 */
+.vp-doc a[href^="./"]:hover::after,
+.vp-doc a[href^="#"]:hover::after,
+.vp-doc a[href^="http"]:hover::after,
+a.VPLink:hover::after,
+a.link:hover::after,
+.vp-doc a:hover::after {
+  display: none !important;
+}
+
+/* 移除链接后的外部链接图标 */
+.vp-doc a[href^="http"]::after,
+a.vp-external-link-icon::after,
+.VPLink svg,
+a.external-link::after {
+  display: none !important;
+}
+
+/* 特性卡片样式 */
+.features {
+  gap: 30px;
+  margin: 3rem 0;
+}
+
+.feature {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(66, 184, 131, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(66, 184, 131, 0.15);
+  border-color: rgba(66, 184, 131, 0.3);
+  background: linear-gradient(135deg, rgba(66, 184, 131, 0.08), rgba(255, 255, 255, 0.05));
+}
+
+.feature h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #42b883, #3eaf7c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.feature p {
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* 保持链接样式一致性 */
+.vp-doc a,
+a.VPLink,
+.VPContentDocOutline a,
+.VPSidebarItem a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s;
+}
+
+/* 确保导航和侧边栏链接没有箭头 */
+.VPNavBarMenuLink::after,
+.VPNavBarMenuGroup .text::after,
+.VPSidebarItem .link::after,
+.VPDocAsideOutlineItem .link::after {
+  display: none !important;
+}
+
+/* 主标题动画 */
+h1 {
+  position: relative;
+  overflow: hidden;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--vp-c-brand-1), transparent);
+  transform: translateX(-100%);
+  animation: slideIn 2s ease forwards;
+}
+
+@keyframes slideIn {
+  to { transform: translateX(100%); }
+}
+
+/* 图片悬停效果 */
+img:not(.VPImage):not(.main-screenshot) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:not(.VPImage):not(.main-screenshot):hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* 代码块动画 */
+pre {
+  position: relative;
+  overflow: hidden;
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--vp-c-brand-1);
+  transform: translateY(100%);
+  animation: codeBlockIndicator 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes codeBlockIndicator {
+  to { transform: translateY(0); }
+}
+
+/* 表格动画 */
+table {
+  animation: fadeInUp 0.8s ease;
+}
+
+tr {
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: rgba(66, 184, 131, 0.05) !important;
+}
+
+/* 列表动画 */
+ul, ol {
+  counter-reset: item;
+}
+
+li {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
+}
+
+/*引用块动画*/
+blockquote {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+blockquote:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 菜单动画 */
+.VPMenu {
+  transform-origin: top;
+  animation: dropDown 0.3s ease;
+}
+
+@keyframes dropDown {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* 全局动画公共类 */
+.animate-spin {
+  animation: spin 2s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: translateY(-10px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+/* 滚动进度条 */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--vp-c-brand-1), var(--vp-c-brand-3));
+  z-index: 9999;
+  transition: width 0.1s;
+}
+
+/* 隐藏链接箭头 */
+.VPLink .link-icon-after,
+.VPLink .link-icon-before {
+  display: none !important;
+}
