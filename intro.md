@@ -160,21 +160,28 @@ hr::after {
 }
 </style>
 
-<script>
-// 滚动动画
-document.addEventListener('DOMContentLoaded', function() {
-  const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.animated-card');
+<script setup>
+import { onMounted, onUnmounted } from 'vue'
+
+let animateOnScroll = () => {}
+
+onMounted(() => {
+  animateOnScroll = () => {
+    const elements = document.querySelectorAll('.animated-card')
     elements.forEach(element => {
-      const position = element.getBoundingClientRect();
-      if(position.top < window.innerHeight) {
-        element.style.opacity = '1';
+      const position = element.getBoundingClientRect()
+      if (position.top < window.innerHeight) {
+        element.style.opacity = '1'
       }
-    });
-  };
-  
-  window.addEventListener('scroll', animateOnScroll);
+    })
+  }
+
+  window.addEventListener('scroll', animateOnScroll)
   // 初始触发一次，处理首屏元素
-  animateOnScroll();
-});
+  animateOnScroll()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', animateOnScroll)
+})
 </script>
