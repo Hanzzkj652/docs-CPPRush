@@ -164,16 +164,24 @@ tr:nth-child(even) {
 
 /* 添加标题样式 */
 h1 {
-  background: linear-gradient(120deg, #42b883 30%, #3eaf7c 70%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+  color: var(--vp-c-brand-1);
+}
+
+h1 .emoji {
+  color: initial;
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 h2 {
   border-left: 4px solid var(--vp-c-brand-1);
   padding-left: 10px;
+}
+
+h2 .emoji {
+  color: initial;
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 /* 添加分隔线样式 */

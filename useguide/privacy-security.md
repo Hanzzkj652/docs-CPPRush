@@ -14,6 +14,13 @@
 - **禁止商业用途**：不会将您的个人信息用于任何商业目的
 - **禁止信息共享**：不会向任何第三方提供您的个人信息
 
+### 第三方授权
+本程序使用了以下第三方开源组件(使用本程序代表您同意以下协议)：
+- Mixpanel组件,该组件仅用于统计数据，不收集您的任何个人信息。[Mixpanel隐私政策](https://mixpanel.com/legal/privacy-policy/)
+- Better Stack组件,该组件仅用于收集错误日志报告。[Better Stac隐私政策](https://betterstack.com/security)
+
+
+
 ## 数据安全机制
 
 ### 🔐 端到端加密传输

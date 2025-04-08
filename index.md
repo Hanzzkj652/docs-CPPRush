@@ -20,8 +20,8 @@ hero:
 features:
   - icon: 📢
     title: 重要公告
-    details: |-
-      本人又老一岁了，我将在未来的日子里为大家带来更加优秀的项目。
+    details: 
+      我将在未来的日子里为大家带来更加优秀的项目。其他项目有学习通刷课,网址为docs-xuetongauto.netlify.app，欢迎大家使用。
     type: warning
 
   - icon: ⚡

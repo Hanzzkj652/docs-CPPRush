@@ -58,6 +58,7 @@ export default defineConfig({
         text: '其他',
         collapsed: false,
         items: [
+          { text: '捐赠', link: '/other/donation' },
           { text: '联系我们', link: '/other/contact-us' },
           { text: '注意事项', link: '/other/warning' },
           { text: '反馈建议', link: '/other/feedback' }

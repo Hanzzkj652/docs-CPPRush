@@ -18,13 +18,45 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, 
-    rgba(66, 184, 131, 0.02) 0%, 
-    rgba(255, 255, 255, 0) 50%, 
-    rgba(66, 184, 131, 0.02) 100%);
-  filter: blur(40px);
+    rgba(66, 184, 131, 0.03) 0%, 
+    rgba(255, 255, 255, 0.01) 50%, 
+    rgba(66, 184, 131, 0.03) 100%);
+  filter: blur(30px);
   transform-origin: center;
-  animation: rotateGradient 20s ease infinite;
+  animation: rotateGradient 25s ease infinite;
   z-index: -2;
+  opacity: 0.9;
+}
+
+/* 移动端优化 */
+@media (max-width: 767px) {
+  .dynamic-gradient {
+    animation: rotateGradient 35s linear infinite;
+    filter: blur(15px);
+    opacity: 0.7;
+  }
+  
+  /* 减少或禁用一些动画效果 */
+  .light-rays,
+  .magnetic-field,
+  .grid-background {
+    display: none;
+  }
+  
+  .floating-element {
+    animation-duration: 40s;
+    opacity: 0.6;
+  }
+  
+  .bubble {
+    animation-duration: 25s;
+    opacity: 0.7;
+  }
+  
+  .star {
+    animation: twinkle 6s ease-in-out infinite;
+    opacity: 0.8;
+  }
 }
 
 @keyframes rotateGradient {
@@ -76,6 +108,15 @@
   width: 100%;
   height: 100%;
   z-index: -3;
+  background: radial-gradient(circle at center,
+    rgba(66, 184, 131, 0.01) 0%,
+    transparent 70%);
+  animation: pulseBackground 8s ease-in-out infinite;
+}
+
+@keyframes pulseBackground {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.6; }
 }
 
 .star {

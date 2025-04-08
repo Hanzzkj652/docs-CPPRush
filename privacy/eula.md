@@ -31,6 +31,12 @@
 - 通过使用本软件提供付费服务
 - 将本软件集成到商业产品或服务中
 
+### 1.4 第三方授权
+本程序使用了以下第三方开源组件(使用本程序代表您同意以下协议)：
+- Mixpanel组件,该组件仅用于统计数据，不收集您的任何个人信息。[Mixpanel隐私政策](https://mixpanel.com/legal/privacy-policy/)
+- Better Stack组件,该组件仅用于收集错误日志报告。[Better Stac隐私政策](https://betterstack.com/security)
+
+
 ## 2. 知识产权
 
 ### 2.1 所有权

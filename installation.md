@@ -42,7 +42,8 @@ CPPRush支持以下操作系统：
 ### 方法一：直接下载可执行文件（推荐）
 
 1. 从 [发布页面](https://github.com/Hanzzkj652/CPPRush/releases) 下载最新版本的`CPPRush.exe`
-   > **💡 提示**：国内用户请使用 [飞牛云下载](https://ghproxy.com/)
+   > **💡 提示**：国内用户请使用 [阿里云盘下载](https://www.alipan.com/s/C7Bo5Nm2fBG)(提取码为7ro0)
+
 
 2. 将下载的文件放置在任意位置(**建议优先放在非系统盘**)，并确保路径无中文字符
 
